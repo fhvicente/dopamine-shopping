@@ -1,0 +1,283 @@
+{
+  "ticker": {
+    "items": [
+      "🛵 DELIVERY BY (ALMOST) REAL DRIVERS",
+      "📍 LIVE TRACKING WORLDWIDE",
+      "💸 ONE-CLICK AUTO-PAYMENT",
+      "💊 100% FAKE, 200% DOPAMINE",
+      "🧾 THE INVOICE NEVER ARRIVES",
+      "🛍️ FINAL PRICE: ALWAYS €0.00"
+    ]
+  },
+  "nav": {
+    "catalog": "Catalog",
+    "deals": "Deals",
+    "account": "My account",
+    "cart": "Cart",
+    "track": "Track",
+    "about": "About"
+  },
+  "hero": {
+    "tagline": "✦ the only honest shop on the internet",
+    "title1": "buy everything.",
+    "title2": "pay nothing.",
+    "subtitle": "The shop that sells the dopamine of buying. The invoice never arrives. 🧠",
+    "ctaPrimary": "get my dopamine",
+    "ctaSecondary": "see deals",
+    "badge": "FREE DOPAMINE ✦ COME GET IT",
+    "savedToday": "We saved {amount} today 💊"
+  },
+  "coupon": {
+    "tag": "✦ Premium Welcome Offer",
+    "title": "25% OFF",
+    "subtitle": "on your first order",
+    "description": "Use the coupon at checkout and watch the imaginary money melt away. ✨",
+    "code": "FIRSTDOSE",
+    "copy": "copy",
+    "copied": "copied!",
+    "cta": "start shopping",
+    "badge": "1ST ORDER"
+  },
+  "flashDeals": {
+    "title": "🔥 flash deals",
+    "subtitle": "up to 38% OFF on what doesn't exist",
+    "description": "Absurd discounts on products you'll never receive. Grab them while the dopamine is on sale. 🐋",
+    "cta": "see deals"
+  },
+  "valueProps": {
+    "title": "why dopamine.shop?",
+    "items": {
+      "real": {
+        "icon": "🧾",
+        "title": "100% real dopamine",
+        "description": "the invoice never arrives"
+      },
+      "drivers": {
+        "icon": "🛵",
+        "title": "(almost) real drivers",
+        "description": "they leave home to deliver to you"
+      },
+      "checkout": {
+        "icon": "⚡",
+        "title": "auto-pay checkout",
+        "description": "in 15 seconds"
+      },
+      "tracking": {
+        "icon": "📍",
+        "title": "live tracking",
+        "description": "the real trip to your door"
+      }
+    }
+  },
+  "categories": {
+    "title": "shop by category",
+    "products": "products",
+    "games": "Games",
+    "tech": "Tech",
+    "beauty": "Beauty",
+    "fashion": "Fashion",
+    "home": "Home",
+    "gifts": "Gifts"
+  },
+  "catalog": {
+    "title": "full catalog",
+    "subtitle": "everything you won't buy",
+    "all": "All",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "reviews": "{count} reviews",
+    "installments": "{count}x of {price} interest-free 💳",
+    "outOfStock": "Sold out (lie)",
+    "inStock": "In stock"
+  },
+  "product": {
+    "breadcrumbHome": "Home",
+    "stockBadge": "IN STOCK — delivery tomorrow if you order by 23:59",
+    "description": "Description",
+    "reviews": "Reviews",
+    "questions": "Questions",
+    "related": "you also won't buy this",
+    "trust": {
+      "payment": "100% fake payment",
+      "returns": "Easy returns",
+      "delivery": "Optional whale delivery"
+    },
+    "quantity": "Quantity"
+  },
+  "cart": {
+    "title": "your imaginary cart",
+    "empty": "Your cart is as empty as your bank account would be if you shopped here (i.e., untouched).",
+    "emptyCta": "start not buying",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "shipping": "Shipping",
+    "free": "FREE 🎉",
+    "total": "Total",
+    "neverPay": "Which you'll never pay.",
+    "couponPlaceholder": "Coupon code",
+    "apply": "Apply",
+    "applied": "Coupon applied!",
+    "invalidCoupon": "Invalid coupon (but the discount was fake anyway).",
+    "checkout": "Place Order",
+    "secure": "Your card will not be charged. Ever.",
+    "remove": "Remove"
+  },
+  "checkout": {
+    "title": "checkout",
+    "step1": "Delivery details",
+    "step2": "Payment",
+    "step3": "Confirmation",
+    "addressNote": "We need your address for the epic journey of your package.",
+    "fields": {
+      "name": "Full name",
+      "address": "Address",
+      "zip": "Zip code",
+      "city": "City",
+      "country": "Country",
+      "email": "Email",
+      "cardNumber": "Card number",
+      "expiry": "Expiry",
+      "cvv": "CVV",
+      "cardName": "Name on card"
+    },
+    "next": "Continue",
+    "back": "Back",
+    "pay": "Pay {amount}",
+    "processing": "Processing payment...",
+    "approved": "✅ Paid!",
+    "tabs": {
+      "card": "Card",
+      "mbway": "MB Way",
+      "ref": "Bank Ref"
+    },
+    "confirmation": {
+      "title": "🎉 ORDER CONFIRMED!",
+      "trackingNumber": "Tracking number",
+      "charged": "Amount charged",
+      "chargedValue": "€0.00 (as always)",
+      "eta": "Estimated delivery",
+      "etaValue": "tomorrow (maybe)",
+      "trackCta": "Track Order",
+      "continueCta": "Continue Shopping"
+    },
+    "card": {
+      "magic": "💡 tip: use 4242 4242 4242 4242 (or anything, they all work)"
+    }
+  },
+  "tracking": {
+    "title": "live tracking",
+    "subtitle": "follow the epic journey of your nothing",
+    "inputPlaceholder": "Tracking number (e.g. DSH-2024-420-REAL)",
+    "track": "track",
+    "states": {
+      "received": "Order received",
+      "paid": "Payment confirmed",
+      "paidNote": "(€0.00 charged 👻)",
+      "preparing": "Preparing at warehouse",
+      "shipped": "Out for delivery",
+      "transit": "In transit",
+      "transitNow": "IN PROGRESS",
+      "currently": "Currently",
+      "eta": "Estimated delivery",
+      "tomorrow": "Tomorrow"
+    },
+    "events": {
+      "whale": "🐋 Your package was swallowed by a whale. The whale will spit it at the right destination.",
+      "ufo": "🛸 ALERT: package abducted by UFO. The aliens promised to deliver.",
+      "pirates": "🏴‍☠️ Intercepted by pirates in the Suez Canal. Negotiations underway.",
+      "bermuda": "⛺ The driver got lost in the Bermuda Triangle. GPS recalculating.",
+      "volcano": "🌋 Active detour due to volcanic eruption. The lava is being elegantly avoided.",
+      "turtle": "🐢 The package was handed to a turtle for the final leg. She's reliable."
+    },
+    "locations": {
+      "atlantic": "Atlantic Ocean (aboard a whale)",
+      "space": "Low Earth orbit (UFO rerouting)",
+      "suez": "Suez Canal (negotiating with pirates)",
+      "bermuda": "Bermuda Triangle (GPS lost)",
+      "iceland": "Over Iceland (avoiding volcano)",
+      "neighborhood": "Neighboring district (handed to turtle)"
+    }
+  },
+  "deals": {
+    "title": "🔥 flash deals",
+    "subtitle": "absurd discounts on products you'll never see",
+    "endsIn": "Ends in",
+    "expired": "🎉 deal ended. (lie, it restarted)"
+  },
+  "about": {
+    "title": "about us",
+    "subtitle": "why does this exist?",
+    "intro": "Two guys, no ads, no investors — just for the fun of it (and the dopamine).",
+    "p1": "dopamine.shop was born from a simple observation: the brain releases dopamine when you click 'buy', not when the package arrives. So we thought: what if we cut out the middleman?",
+    "p2": "Here you can 'spend' €10,000 on an RTX 4090, watch the checkout approve it, and follow your order being swallowed by a whale. No guilt. No invoice. No delivery.",
+    "p3": "No ads. No tracking. No real sales. Just dopamine, in its purest, tax-free form.",
+    "cta": "start not buying"
+  },
+  "faq": {
+    "title": "questions nobody asks",
+    "items": [
+      {
+        "q": "Is dopamine.shop a real shop?",
+        "a": "No — it's a parody shop. The products, payment and delivery are 100% fake. The only real thing is the dopamine of buying."
+      },
+      {
+        "q": "How does it work?",
+        "a": "You \"buy\" a product, \"pay\" with a fake card that approves itself, and then track an absurd delivery that travels the world in real time — sometimes swallowed by a whale or abducted by a UFO. Not a cent leaves your account."
+      },
+      {
+        "q": "Is it really free?",
+        "a": "Yes. No charges are processed and no invoice arrives. Zero cost, always."
+      },
+      {
+        "q": "Is it a scam? Is it safe?",
+        "a": "It's not a scam — it's comedy. Since nothing is charged and no payment is real, there's nothing to steal. It's 100% safe precisely because it's 100% fake."
+      },
+      {
+        "q": "Do you store my card details?",
+        "a": "No. The payment screen is just for show: nothing is processed, nothing is charged, no card data is stored."
+      },
+      {
+        "q": "How long does delivery take?",
+        "a": "A few days, just like a real order — and you can follow every step on the live tracker, with map included."
+      },
+      {
+        "q": "Why was my package swallowed by a whale?",
+        "a": "It's part of the fun. There's a chance of a comedic mishap. Almost always reaches the destination, with an epic story to tell."
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "deals that don't exist, straight to your inbox",
+    "subtitle": "imaginary spam, every week",
+    "placeholder": "your-email@nothing.com",
+    "cta": "want it",
+    "thanks": "✨ subscribed! (we sent nothing)"
+  },
+  "footer": {
+    "tagline": "The shop that sells the dopamine of buying.",
+    "tagline2": "No cost, no invoice, no guilt. Just the ride.",
+    "shop": "Shop",
+    "company": "The shop",
+    "help": "Help",
+    "payment": "Payment",
+    "links": {
+      "about": "About us",
+      "suggestion": "Suggestion?",
+      "support": "Support 💊",
+      "helpCenter": "Help center",
+      "track": "Track",
+      "returns": "Returns",
+      "paypal": "PayPal",
+      "fakeCard": "Imaginary Card",
+      "noInvoice": "Invoice that never arrives 👻"
+    },
+    "legal": "© 2026 dopamine™ · VAT 69-6969696 · 100% a joke, every bit",
+    "made": "made with 💊 and zero euros · no invoice has ever been issued here"
+  },
+  "common": {
+    "loading": "loading...",
+    "off": "OFF",
+    "from": "from",
+    "save": "save"
+  }
+}

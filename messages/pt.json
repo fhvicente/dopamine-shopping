@@ -1,0 +1,283 @@
+{
+  "ticker": {
+    "items": [
+      "🛵 ENTREGA POR ESTAFETAS (QUASE) REAIS",
+      "📍 RASTREIO EM TEMPO REAL",
+      "💸 CHECKOUT COM PAGAMENTO AUTOMÁTICO",
+      "💊 100% FALSO, 200% DOPAMINA",
+      "🧾 A FATURA NUNCA CHEGA",
+      "🛍️ PREÇO FINAL: SEMPRE 0,00€"
+    ]
+  },
+  "nav": {
+    "catalog": "Catálogo",
+    "deals": "Ofertas",
+    "account": "A minha conta",
+    "cart": "Carrinho",
+    "track": "Rastrear",
+    "about": "Sobre"
+  },
+  "hero": {
+    "tagline": "✦ a única loja honesta da internet",
+    "title1": "compra tudo.",
+    "title2": "paga nada.",
+    "subtitle": "A loja que vende a dopamina de comprar. A fatura nunca chega. 🧠",
+    "ctaPrimary": "obter a minha dopamina",
+    "ctaSecondary": "ver ofertas",
+    "badge": "DOPAMINA GRÁTIS ✦ VEM BUSCAR",
+    "savedToday": "Poupámos {amount} hoje 💊"
+  },
+  "coupon": {
+    "tag": "✦ Oferta Premium de Boas-Vindas",
+    "title": "25% OFF",
+    "subtitle": "na tua primeira encomenda",
+    "description": "Usa o cupão no checkout e vê o dinheiro imaginário derreter-se. ✨",
+    "code": "PRIMEIRADOSE",
+    "copy": "copiar",
+    "copied": "copiado!",
+    "cta": "começar a comprar",
+    "badge": "1ª ENCOMENDA"
+  },
+  "flashDeals": {
+    "title": "🔥 flash deals",
+    "subtitle": "até 38% OFF no que não existe",
+    "description": "Descontos absurdos em produtos que nunca vais receber. Apanha-os enquanto a dopamina está em promoção. 🐋",
+    "cta": "ver ofertas"
+  },
+  "valueProps": {
+    "title": "porque dopamina.shop?",
+    "items": {
+      "real": {
+        "icon": "🧾",
+        "title": "dopamina 100% real",
+        "description": "a fatura nunca chega"
+      },
+      "drivers": {
+        "icon": "🛵",
+        "title": "estafetas (quase) reais",
+        "description": "saem de casa para te entregar"
+      },
+      "checkout": {
+        "icon": "⚡",
+        "title": "checkout auto-pay",
+        "description": "em 15 segundos"
+      },
+      "tracking": {
+        "icon": "📍",
+        "title": "rastreio ao vivo",
+        "description": "a viagem real até à tua porta"
+      }
+    }
+  },
+  "categories": {
+    "title": "comprar por categoria",
+    "products": "produtos",
+    "games": "Jogos",
+    "tech": "Tech",
+    "beauty": "Beleza",
+    "fashion": "Moda",
+    "home": "Casa",
+    "gifts": "Presentes"
+  },
+  "catalog": {
+    "title": "catálogo completo",
+    "subtitle": "tudo que não vais comprar",
+    "all": "Todos",
+    "addToCart": "Adicionar ao Carrinho",
+    "buyNow": "Comprar Agora",
+    "reviews": "{count} avaliações",
+    "installments": "{count}x de {price} sem juros 💳",
+    "outOfStock": "Esgotado (mentira)",
+    "inStock": "Em stock"
+  },
+  "product": {
+    "breadcrumbHome": "Início",
+    "stockBadge": "EM STOCK — entrega amanhã se encomendares até às 23:59",
+    "description": "Descrição",
+    "reviews": "Avaliações",
+    "questions": "Perguntas",
+    "related": "também não vais comprar isto",
+    "trust": {
+      "payment": "Pagamento 100% fake",
+      "returns": "Devolução fácil",
+      "delivery": "Entrega via baleia opcional"
+    },
+    "quantity": "Quantidade"
+  },
+  "cart": {
+    "title": "o teu carrinho imaginário",
+    "empty": "O teu carrinho está tão vazio quanto a tua conta bancária depois de comprares aqui (ou seja, intacta).",
+    "emptyCta": "começar a não comprar",
+    "subtotal": "Subtotal",
+    "discount": "Desconto",
+    "shipping": "Envio",
+    "free": "GRÁTIS 🎉",
+    "total": "Total",
+    "neverPay": "Que nunca vais pagar.",
+    "couponPlaceholder": "Código do cupão",
+    "apply": "Aplicar",
+    "applied": "Cupão aplicado!",
+    "invalidCoupon": "Cupão inválido (mas o desconto era falso na mesma).",
+    "checkout": "Finalizar Encomenda",
+    "secure": "O teu cartão não será cobrado. Nunca.",
+    "remove": "Remover"
+  },
+  "checkout": {
+    "title": "checkout",
+    "step1": "Dados de entrega",
+    "step2": "Pagamento",
+    "step3": "Confirmação",
+    "addressNote": "Precisamos da tua morada para a viagem épica do teu pacote.",
+    "fields": {
+      "name": "Nome completo",
+      "address": "Morada",
+      "zip": "Código postal",
+      "city": "Cidade",
+      "country": "País",
+      "email": "Email",
+      "cardNumber": "Número do cartão",
+      "expiry": "Validade",
+      "cvv": "CVV",
+      "cardName": "Nome no cartão"
+    },
+    "next": "Continuar",
+    "back": "Voltar",
+    "pay": "Pagar {amount}",
+    "processing": "A processar pagamento...",
+    "approved": "✅ Pago!",
+    "tabs": {
+      "card": "Cartão",
+      "mbway": "MB Way",
+      "ref": "Referência MB"
+    },
+    "confirmation": {
+      "title": "🎉 ENCOMENDA CONFIRMADA!",
+      "trackingNumber": "N.º de rastreio",
+      "charged": "Valor cobrado",
+      "chargedValue": "0,00€ (como sempre)",
+      "eta": "Entrega prevista",
+      "etaValue": "amanhã (talvez)",
+      "trackCta": "Rastrear Encomenda",
+      "continueCta": "Continuar a Comprar"
+    },
+    "card": {
+      "magic": "💡 dica: usa 4242 4242 4242 4242 (ou qualquer coisa, todos funcionam)"
+    }
+  },
+  "tracking": {
+    "title": "rastreio ao vivo",
+    "subtitle": "acompanha a viagem épica do teu nada",
+    "inputPlaceholder": "Número de rastreio (ex: DSH-2024-420-REAL)",
+    "track": "rastrear",
+    "states": {
+      "received": "Encomenda recebida",
+      "paid": "Pagamento confirmado",
+      "paidNote": "(0,00€ debitados 👻)",
+      "preparing": "Em preparação no armazém",
+      "shipped": "Saiu para entrega",
+      "transit": "Em trânsito",
+      "transitNow": "A DECORRER",
+      "currently": "Atualmente",
+      "eta": "Entrega prevista",
+      "tomorrow": "Amanhã"
+    },
+    "events": {
+      "whale": "🐋 O teu pacote foi engolido por uma baleia. A baleia vai cuspir no destino certo.",
+      "ufo": "🛸 ALERTA: encomenda abduzida por OVNI. Os alienígenas prometeram entregar.",
+      "pirates": "🏴‍☠️ Interceptado por piratas no Canal do Suez. Negociações em curso.",
+      "bermuda": "⛺ O estafeta perdeu-se no Triângulo das Bermudas. GPS a recalcular.",
+      "volcano": "🌋 Desvio ativo por erupção vulcânica. A lava está a ser contornada com elegância.",
+      "turtle": "🐢 A encomenda foi dada a uma tartaruga para a etapa final. Ela é confiável."
+    },
+    "locations": {
+      "atlantic": "Oceano Atlântico (a bordo de uma baleia)",
+      "space": "Órbita baixa da Terra (OVNI a recalcular rota)",
+      "suez": "Canal do Suez (em negociações com piratas)",
+      "bermuda": "Triângulo das Bermudas (GPS perdido)",
+      "iceland": "Sobre a Islândia (a contornar vulcão)",
+      "neighborhood": "Bairro vizinho (entregue à tartaruga)"
+    }
+  },
+  "deals": {
+    "title": "🔥 ofertas relâmpago",
+    "subtitle": "absurdos descontos em produtos que nunca vais ver",
+    "endsIn": "Termina em",
+    "expired": "🎉 oferta acabou. (mentira, recomeçou)"
+  },
+  "about": {
+    "title": "sobre nós",
+    "subtitle": "porque é que isto existe?",
+    "intro": "Dois tipos, sem anúncios, sem investidores — só pela graça disso (e da dopamina).",
+    "p1": "dopamina.shop nasceu de uma observação simples: o cérebro liberta dopamina quando carregas em 'comprar', não quando o pacote chega. Então pensámos: e se cortássemos o intermediário?",
+    "p2": "Aqui podes 'gastar' 10.000€ numa RTX 4090, ver o checkout aprovar, e seguir a tua encomenda a ser engolida por uma baleia. Sem culpa. Sem fatura. Sem entrega.",
+    "p3": "Não há anúncios. Não há tracking. Não há vendas reais. Só dopamina, em estado puro, livre de impostos.",
+    "cta": "começar a não comprar"
+  },
+  "faq": {
+    "title": "perguntas que ninguém faz",
+    "items": [
+      {
+        "q": "O dopamina.shop é uma loja real?",
+        "a": "Não — é uma loja paródia. Os produtos, o pagamento e a entrega são 100% falsos. A única coisa real é a dopamina de comprar."
+      },
+      {
+        "q": "Como funciona?",
+        "a": "\"Compras\" um produto, \"pagas\" com um cartão falso que se autoriza sozinho, e depois rastreias uma entrega absurda que percorre o mundo em tempo real — às vezes engolida por uma baleia ou abduzida por um OVNI. Nem um cêntimo sai da tua conta."
+      },
+      {
+        "q": "É mesmo gratuito?",
+        "a": "É. Nenhuma cobrança é processada e nenhuma fatura chega. Zero custo, sempre."
+      },
+      {
+        "q": "É uma burla? É seguro?",
+        "a": "Não é uma burla — é comédia. Como nada é cobrado e nenhum pagamento é real, não há nada a roubar. É 100% seguro precisamente porque é 100% falso."
+      },
+      {
+        "q": "Guardam os meus dados de cartão?",
+        "a": "Não. O ecrã de pagamento é só para aparato: nada é processado, nada é cobrado, nenhum dado de cartão é guardado."
+      },
+      {
+        "q": "Quanto tempo demora a entrega?",
+        "a": "Alguns dias, tal como uma encomenda real — e podes seguir cada passo no rastreador ao vivo, com mapa incluído."
+      },
+      {
+        "q": "Porque é que o meu pacote foi engolido por uma baleia?",
+        "a": "Faz parte da brincadeira. Há uma hipótese de ocorrer um imprevisto cómico. Quase sempre chega ao destino, com uma história épica para contar."
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "ofertas que não existem, direto para a tua caixa de entrada",
+    "subtitle": "spam imaginário, todas as semanas",
+    "placeholder": "o-teu-email@nada.com",
+    "cta": "quero",
+    "thanks": "✨ inscrito! (não enviámos nada)"
+  },
+  "footer": {
+    "tagline": "A loja que vende a dopamina de comprar.",
+    "tagline2": "Sem custo, sem fatura, sem culpa. Só a viagem.",
+    "shop": "Loja",
+    "company": "A loja",
+    "help": "Ajuda",
+    "payment": "Pagamento",
+    "links": {
+      "about": "Sobre nós",
+      "suggestion": "Sugestão?",
+      "support": "Apoiar 💊",
+      "helpCenter": "Centro de ajuda",
+      "track": "Rastrear",
+      "returns": "Devoluções",
+      "paypal": "PayPal",
+      "fakeCard": "Cartão Imaginário",
+      "noInvoice": "Fatura que não chega 👻"
+    },
+    "legal": "© 2026 dopamina™ · NIF 69-6969696 · 100% uma piada, cada bocadinho",
+    "made": "feito com 💊 e zero euros · nenhuma fatura foi aqui emitida"
+  },
+  "common": {
+    "loading": "a carregar...",
+    "off": "OFF",
+    "from": "desde",
+    "save": "poupa"
+  }
+}
