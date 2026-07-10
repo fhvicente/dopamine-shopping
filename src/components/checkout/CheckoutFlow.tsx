@@ -217,20 +217,39 @@ export function CheckoutFlow() {
                     <Field
                       label={t("fields.cardNumber")}
                       value={card.number}
-                      onChange={(v) => setCard({ ...card, number: v })}
+                      inputMode="numeric"
+                      onChange={(v) =>
+                        setCard({
+                          ...card,
+                          number: (v.replace(/\D/g, "").match(/.{1,4}/g) ?? [])
+                            .slice(0, 4)
+                            .join(" "),
+                        })
+                      }
                       placeholder="4242 4242 4242 4242"
                     />
                     <div className="grid grid-cols-2 gap-3">
                       <Field
                         label={t("fields.expiry")}
                         value={card.expiry}
-                        onChange={(v) => setCard({ ...card, expiry: v })}
+                        inputMode="numeric"
+                        onChange={(v) => {
+                          const d = v.replace(/\D/g, "").slice(0, 4);
+                          setCard({
+                            ...card,
+                            expiry:
+                              d.length > 2 ? `${d.slice(0, 2)}/${d.slice(2)}` : d,
+                          });
+                        }}
                         placeholder="12/29"
                       />
                       <Field
                         label={t("fields.cvv")}
                         value={card.cvv}
-                        onChange={(v) => setCard({ ...card, cvv: v })}
+                        inputMode="numeric"
+                        onChange={(v) =>
+                          setCard({ ...card, cvv: v.replace(/\D/g, "").slice(0, 3) })
+                        }
                         placeholder="420"
                       />
                     </div>
@@ -410,6 +429,7 @@ function Field({
   value,
   onChange,
   type = "text",
+  inputMode,
   placeholder,
   required,
 }: {
@@ -417,6 +437,7 @@ function Field({
   value: string;
   onChange: (v: string) => void;
   type?: string;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
   placeholder?: string;
   required?: boolean;
 }) {
@@ -427,6 +448,7 @@ function Field({
       <Input
         id={id}
         type={type}
+        inputMode={inputMode}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
