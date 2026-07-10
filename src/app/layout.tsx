@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: "dopamina.shop — compra tudo. paga nada.",
   description:
     "A loja que vende a dopamina de comprar. 100% falso, 200% dopamina. A fatura nunca chega.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 const display = Space_Grotesk({
