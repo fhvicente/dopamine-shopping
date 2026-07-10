@@ -5,16 +5,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatPrice(value: number, locale = "pt-PT") {
-  return new Intl.NumberFormat(locale, {
+// ponytail: European format pinned (dot thousands, comma decimal) regardless of
+// UI locale. `locale` param kept for callers but intentionally unused.
+const EU_LOCALE = "de-DE";
+
+export function formatPrice(value: number, _locale = EU_LOCALE) {
+  return new Intl.NumberFormat(EU_LOCALE, {
     style: "currency",
     currency: "EUR",
     minimumFractionDigits: 2,
   }).format(value);
 }
 
-export function formatNumber(value: number, locale = "pt-PT") {
-  return new Intl.NumberFormat(locale).format(value);
+export function formatNumber(value: number, _locale = EU_LOCALE) {
+  return new Intl.NumberFormat(EU_LOCALE).format(value);
 }
 
 export function discountPct(original: number, sale: number) {

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Rocket, Flame, Sparkles } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { Badge } from "~/components/ui/badge";
-import { formatPrice } from "~/lib/utils";
+import { formatNumber, formatPrice } from "~/lib/utils";
 import { getFeatured } from "~/data/products";
 
 export function Hero() {
@@ -119,7 +119,7 @@ export function Hero() {
 
 function SavedCounter({ label, locale }: { label: string; locale: string }) {
   const count = useMotionValue(4238917);
-  const [display, setDisplay] = useState("4 238 917");
+  const [display, setDisplay] = useState(formatNumber(4238917));
 
   useEffect(() => {
     const controls = animate(count, 4900000, {
@@ -127,7 +127,7 @@ function SavedCounter({ label, locale }: { label: string; locale: string }) {
       ease: "linear",
       onUpdate: (v) =>
         setDisplay(
-          new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(v),
+          formatNumber(Math.round(v)),
         ),
     });
     return () => controls.stop();

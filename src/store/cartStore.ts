@@ -2,6 +2,7 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { playPop } from "~/lib/sound";
 
 export type CartItem = {
   id: string;
@@ -39,7 +40,8 @@ export const useCartStore = create<CartState>()(
       items: [],
       coupon: null,
       lastAdded: null,
-      add: (item, qty = 1) =>
+      add: (item, qty = 1) => {
+        playPop();
         set((state) => {
           const existing = state.items.find((i) => i.id === item.id);
           const items = existing
@@ -55,7 +57,8 @@ export const useCartStore = create<CartState>()(
               image: item.image,
             },
           };
-        }),
+        });
+      },
       remove: (id) =>
         set((state) => ({ items: state.items.filter((i) => i.id !== id) })),
       setQty: (id, qty) =>
@@ -63,7 +66,9 @@ export const useCartStore = create<CartState>()(
           items:
             qty <= 0
               ? state.items.filter((i) => i.id !== id)
-              : state.items.map((i) => (i.id === id ? { ...i, quantity: qty } : i)),
+              : state.items.map((i) =>
+                  i.id === id ? { ...i, quantity: qty } : i,
+                ),
         })),
       clear: () => set({ items: [], coupon: null }),
       applyCoupon: (code) => {

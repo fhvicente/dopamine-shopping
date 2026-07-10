@@ -27,6 +27,8 @@ import {
 } from "~/lib/tracking";
 import { formatPrice, generateTrackingId, now } from "~/lib/utils";
 import { cn } from "~/lib/utils";
+import { playCash } from "~/lib/sound";
+import { Confetti } from "~/components/ui/Confetti";
 
 type Address = {
   name: string;
@@ -60,7 +62,12 @@ export function CheckoutFlow() {
     email: "",
   });
   const [method, setMethod] = useState<PaymentMethod>("card");
-  const [card, setCard] = useState({ number: "", expiry: "", cvv: "", name: "" });
+  const [card, setCard] = useState({
+    number: "",
+    expiry: "",
+    cvv: "",
+    name: "",
+  });
   const [processing, setProcessing] = useState(false);
   const [approved, setApproved] = useState(false);
   const [tracking, setTracking] = useState<string | null>(null);
@@ -100,11 +107,13 @@ export function CheckoutFlow() {
     clear();
     setTracking(trackingId);
     setStep(3);
+    playCash();
   };
 
   return (
     <section className="container mx-auto max-w-3xl px-4 py-12 md:px-6">
-      <h1 className="mb-8 font-display text-4xl font-extrabold md:text-5xl">
+      {step === 3 && <Confetti />}
+      <h1 className="font-display mb-8 text-4xl font-extrabold md:text-5xl">
         {t("title")}
       </h1>
 
@@ -121,16 +130,55 @@ export function CheckoutFlow() {
               onSubmit={submitAddress}
             >
               <Card className="flex flex-col gap-4 p-6">
-                <p className="text-sm italic text-text-muted">{t("addressNote")}</p>
-                <Field label={t("fields.name")} value={addr.name} onChange={(v) => setAddr({ ...addr, name: v })} required />
-                <Field label={t("fields.email")} type="email" value={addr.email} onChange={(v) => setAddr({ ...addr, email: v })} required />
-                <Field label={t("fields.address")} value={addr.address} onChange={(v) => setAddr({ ...addr, address: v })} required />
+                <p className="text-text-muted text-sm italic">
+                  {t("addressNote")}
+                </p>
+                <Field
+                  label={t("fields.name")}
+                  value={addr.name}
+                  onChange={(v) => setAddr({ ...addr, name: v })}
+                  required
+                />
+                <Field
+                  label={t("fields.email")}
+                  type="email"
+                  value={addr.email}
+                  onChange={(v) => setAddr({ ...addr, email: v })}
+                  required
+                />
+                <Field
+                  label={t("fields.address")}
+                  value={addr.address}
+                  onChange={(v) => setAddr({ ...addr, address: v })}
+                  required
+                />
                 <div className="grid grid-cols-2 gap-3">
-                  <Field label={t("fields.zip")} value={addr.zip} onChange={(v) => setAddr({ ...addr, zip: v })} required />
-                  <Field label={t("fields.city")} value={addr.city} onChange={(v) => setAddr({ ...addr, city: v })} required />
+                  <Field
+                    label={t("fields.zip")}
+                    value={addr.zip}
+                    onChange={(v) => setAddr({ ...addr, zip: v })}
+                    required
+                  />
+                  <Field
+                    label={t("fields.city")}
+                    value={addr.city}
+                    onChange={(v) => setAddr({ ...addr, city: v })}
+                    required
+                  />
                 </div>
-                <Field label={t("fields.country")} value={addr.country} onChange={(v) => setAddr({ ...addr, country: v })} required />
-                <Button type="submit" variant="default" size="lg" glow className="mt-2">
+                <Field
+                  label={t("fields.country")}
+                  value={addr.country}
+                  onChange={(v) => setAddr({ ...addr, country: v })}
+                  required
+                />
+                <Button
+                  type="submit"
+                  variant="default"
+                  size="lg"
+                  glow
+                  className="mt-2"
+                >
                   {t("next")} →
                 </Button>
               </Card>
@@ -166,25 +214,44 @@ export function CheckoutFlow() {
                   </TabsList>
 
                   <TabsContent value="card" className="flex flex-col gap-3">
-                    <Field label={t("fields.cardNumber")} value={card.number} onChange={(v) => setCard({ ...card, number: v })} placeholder="4242 4242 4242 4242" />
+                    <Field
+                      label={t("fields.cardNumber")}
+                      value={card.number}
+                      onChange={(v) => setCard({ ...card, number: v })}
+                      placeholder="4242 4242 4242 4242"
+                    />
                     <div className="grid grid-cols-2 gap-3">
-                      <Field label={t("fields.expiry")} value={card.expiry} onChange={(v) => setCard({ ...card, expiry: v })} placeholder="12/29" />
-                      <Field label={t("fields.cvv")} value={card.cvv} onChange={(v) => setCard({ ...card, cvv: v })} placeholder="420" />
+                      <Field
+                        label={t("fields.expiry")}
+                        value={card.expiry}
+                        onChange={(v) => setCard({ ...card, expiry: v })}
+                        placeholder="12/29"
+                      />
+                      <Field
+                        label={t("fields.cvv")}
+                        value={card.cvv}
+                        onChange={(v) => setCard({ ...card, cvv: v })}
+                        placeholder="420"
+                      />
                     </div>
-                    <Field label={t("fields.cardName")} value={card.name} onChange={(v) => setCard({ ...card, name: v })} />
-                    <p className="rounded-lg bg-brand-accent/10 px-3 py-2 font-mono text-xs text-brand-accent">
+                    <Field
+                      label={t("fields.cardName")}
+                      value={card.name}
+                      onChange={(v) => setCard({ ...card, name: v })}
+                    />
+                    <p className="bg-brand-accent/10 text-brand-accent rounded-lg px-3 py-2 font-mono text-xs">
                       {t("card.magic")}
                     </p>
                   </TabsContent>
 
                   <TabsContent value="mbway">
-                    <div className="rounded-xl border border-border-subtle bg-secondary/50 p-4 text-sm">
+                    <div className="border-border-subtle bg-secondary/50 rounded-xl border p-4 text-sm">
                       📱 MB Way: 912 345 678 (qualquer número funciona)
                     </div>
                   </TabsContent>
 
                   <TabsContent value="ref">
-                    <div className="rounded-xl border border-border-subtle bg-secondary/50 p-4 font-mono text-sm">
+                    <div className="border-border-subtle bg-secondary/50 rounded-xl border p-4 font-mono text-sm">
                       Entidade: 12345 · Referência: 999 999 999 · Valor:{" "}
                       {formatPrice(total, localeTag)}
                     </div>
@@ -192,7 +259,12 @@ export function CheckoutFlow() {
                 </Tabs>
 
                 <div className="mt-2 flex gap-3">
-                  <Button type="button" variant="ghost" size="lg" onClick={() => setStep(1)}>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="lg"
+                    onClick={() => setStep(1)}
+                  >
                     ← {t("back")}
                   </Button>
                   <Button
@@ -230,7 +302,7 @@ export function CheckoutFlow() {
               key="s3"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center gap-5 rounded-2xl border border-emerald-500/40 bg-gradient-to-br from-card to-emerald-900/10 p-8 text-center"
+              className="from-card flex flex-col items-center gap-5 rounded-2xl border border-emerald-500/40 bg-gradient-to-br to-emerald-900/10 p-8 text-center"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -243,10 +315,14 @@ export function CheckoutFlow() {
               <h2 className="font-display text-3xl font-extrabold md:text-4xl">
                 {t("confirmation.title")}
               </h2>
-              <div className="flex w-full flex-col gap-3 rounded-2xl border border-border-subtle bg-bg-dark/40 p-5 text-left">
+              <div className="border-border-subtle bg-bg-dark/40 flex w-full flex-col gap-3 rounded-2xl border p-5 text-left">
                 <Row
                   label={t("confirmation.trackingNumber")}
-                  value={<span className="font-mono text-brand-accent">{tracking}</span>}
+                  value={
+                    <span className="text-brand-accent font-mono">
+                      {tracking}
+                    </span>
+                  }
                 />
                 <Row
                   label={t("confirmation.charged")}
@@ -256,7 +332,10 @@ export function CheckoutFlow() {
                     </span>
                   }
                 />
-                <Row label={t("confirmation.eta")} value={t("confirmation.etaValue")} />
+                <Row
+                  label={t("confirmation.eta")}
+                  value={t("confirmation.etaValue")}
+                />
               </div>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Button

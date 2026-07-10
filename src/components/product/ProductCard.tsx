@@ -8,7 +8,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "~/components/ui/badge";
 import { StarRating } from "~/components/ui/star-rating";
-import { discountPct, formatPrice } from "~/lib/utils";
+import { discountPct, formatPrice, hashCode } from "~/lib/utils";
 import { useCartStore } from "~/store/cartStore";
 import type { Product } from "~/data/products";
 
@@ -20,6 +20,9 @@ export function ProductCard({ product }: { product: Product }) {
   const [confetti, setConfetti] = useState(false);
   const off = discountPct(product.originalPrice, product.salePrice);
   const localeTag = locale === "en" ? "en-GB" : "pt-PT";
+  // ponytail: fake urgency, deterministic from id so SSR/CSR match (no hydration warning)
+  const viewers = 3 + (hashCode(product.id) % 47);
+  const stock = 1 + (hashCode(product.id + "s") % 8);
 
   const handleAdd = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -40,10 +43,10 @@ export function ProductCard({ product }: { product: Product }) {
     <motion.article
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
-      className="group relative overflow-hidden rounded-2xl border border-border-subtle bg-bg-card/60 backdrop-blur-sm transition-all hover:border-brand-primary/40 hover:shadow-[0_10px_40px_-10px_rgba(124,58,237,0.4)]"
+      className="group border-border-subtle bg-bg-card/60 hover:border-brand-primary/40 relative overflow-hidden rounded-2xl border backdrop-blur-sm transition-all hover:shadow-[0_10px_40px_-10px_rgba(124,58,237,0.4)]"
     >
       <Link href={`/produto/${product.slug}`} className="block">
-        <div className="relative aspect-square overflow-hidden bg-bg-elevated">
+        <div className="bg-bg-elevated relative aspect-square overflow-hidden">
           <Image
             src={product.images[0]!}
             alt={product.name}
@@ -71,7 +74,7 @@ export function ProductCard({ product }: { product: Product }) {
                 e.stopPropagation();
                 setWishlisted((v) => !v);
               }}
-              className="cursor-pointer rounded-full bg-bg-dark/60 p-2 backdrop-blur-sm transition hover:bg-bg-dark/80"
+              className="bg-bg-dark/60 hover:bg-bg-dark/80 cursor-pointer rounded-full p-2 backdrop-blur-sm transition"
               aria-label="Wishlist"
             >
               <Heart
@@ -89,20 +92,20 @@ export function ProductCard({ product }: { product: Product }) {
             reviewCount={product.reviewCount}
             locale={localeTag}
           />
-          <h3 className="line-clamp-2 min-h-[2.5rem] font-display text-sm font-semibold leading-tight md:text-base">
+          <h3 className="font-display line-clamp-2 min-h-[2.5rem] text-sm leading-tight font-semibold md:text-base">
             {product.name}
           </h3>
 
           <div className="flex flex-col gap-0.5">
             {off > 0 && (
-              <span className="font-mono text-xs text-text-muted line-through">
+              <span className="text-text-muted font-mono text-xs line-through">
                 {formatPrice(product.originalPrice, localeTag)}
               </span>
             )}
-            <span className="font-mono text-xl font-bold text-text-primary">
+            <span className="text-text-primary font-mono text-xl font-bold">
               {formatPrice(product.salePrice, localeTag)}
             </span>
-            <span className="font-mono text-[11px] text-text-muted">
+            <span className="text-text-muted font-mono text-[11px]">
               {t("installments", {
                 count: 4,
                 price: formatPrice(product.salePrice / 4, localeTag),
@@ -110,11 +113,22 @@ export function ProductCard({ product }: { product: Product }) {
             </span>
           </div>
 
+          <div className="flex items-center justify-between gap-2 font-mono text-[10px]">
+            <span className="flex items-center gap-1 text-emerald-400">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              </span>
+              {viewers} a ver agora
+            </span>
+            <span className="text-brand-hot">só restam {stock}!</span>
+          </div>
+
           <motion.button
             type="button"
             onClick={handleAdd}
             whileTap={{ scale: 0.96 }}
-            className="relative mt-1 flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-brand-primary to-brand-primary-deep px-4 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_-4px_rgba(124,58,237,0.5)] transition hover:brightness-110"
+            className="from-brand-primary to-brand-primary-deep relative mt-1 flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r px-4 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_-4px_rgba(124,58,237,0.5)] transition hover:brightness-110"
           >
             <ShoppingCart className="h-4 w-4" />
             {t("addToCart")}
@@ -141,7 +155,7 @@ function ConfettiBurst() {
             initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
             animate={{ x, y, opacity: 0, scale: 0.4 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="absolute left-1/2 top-1/2 h-1.5 w-1.5 rounded-full"
+            className="absolute top-1/2 left-1/2 h-1.5 w-1.5 rounded-full"
             style={{ backgroundColor: colors[i % colors.length] }}
           />
         );
